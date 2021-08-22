@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.conflux</groupId>
-    <artifactId>nft-index</artifactId>
+    <artifactId>conflux-nft-index</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>nft-index</name>
     <description>Conflux NFT Index</description>
