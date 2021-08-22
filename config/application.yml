@@ -1,0 +1,51 @@
+spring:
+  profiles:
+    active: dev
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    encoding: UTF-8
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+    property-naming-strategy: SNAKE_CASE
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: WEB-INF/**
+
+logging:
+  config: file:config/logback.xml
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:/mapper/*Mapper.xml
+server:
+  tomcat:
+    uri-encoding: UTF-8
+
+druid:
+  monitor:
+    baseurl: /noumena-druid-monitor/*
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: false
+    env:
+      enabled: false
+  endpoints:
+    web:
+      base-path: /ontoservice-actuator-monitor
+      exposure:
+        include: health,info,beans,sessions,loggers,logfile,metrics,httptrace,mappings,threaddump
+  security:
+    enabled: false
+
+swagger:
+  enable: true
+

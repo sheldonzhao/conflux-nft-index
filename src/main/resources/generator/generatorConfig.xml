@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://172.168.3.31:3306/noumena_2?serverTimezone=UTC&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;allowPublicKeyRetrieval=true"
+                        userId="noumena"
+                        password="Noumena@2020">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.railone.model.dao" targetProject="src/main/java">
+            <!-- 是否对model添加 构造函数 -->
+            <property name="constructorBased" value="false"/>
+            <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
+            <property name="trimStrings" value="true"/>
+            <!-- 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法 -->
+            <property name="immutable" value="false"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.railone.mapper" targetProject="src/main/java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!--        <table tableName="t_cust_transaction" domainObjectName="CustTransaction">-->
+        <!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--        </table>-->
+
+        <!--        <table tableName="t_exchange_address" domainObjectName="ExchangeAddress">-->
+        <!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--        </table>-->
+
+        <!--                <table tableName="t_exchange_api" domainObjectName="ExchangeApi">-->
+        <!--                    <generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--                </table>-->
+
+<!--        <table tableName="t_swap_asset" domainObjectName="SwapAsset">-->
+<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--        </table>-->
+
+<!--        <table tableName="t_swap_exchange_record" domainObjectName="SwapExchangeRecord">-->
+<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--        </table>-->
+
+<!--        <table tableName="t_swap_exchange_record_detail" domainObjectName="SwapExchangeRecordDetail">-->
+<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--        </table>-->
+
+<!--        <table tableName="t_swap_monitor" domainObjectName="SwapMonitor">-->
+<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--        </table>-->
+
+<!--        <table tableName="t_swap_revenue" domainObjectName="SwapRevenue">-->
+<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--        </table>-->
+
+        <table tableName="t_swap_spot_record" domainObjectName="SwapSpotRecord">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+<!--        <table tableName="t_swap_spot_record_detail" domainObjectName="SwapSpotRecordDetail">-->
+<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--        </table>-->
+
+<!--        <table tableName="t_swap_transfer" domainObjectName="SwapTransfer">-->
+<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--        </table>-->
+
+<!--        <table tableName="t_noumena_setting" domainObjectName="NoumenaSetting">-->
+<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--        </table>-->
+
+        <!--                <table tableName="t_exchange_record_detail" domainObjectName="ExchangeRecordDetail">-->
+        <!--                    <generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--                </table>-->
+
+        <!--        <table tableName="t_asset_transfer" domainObjectName="AssetTransfer">-->
+        <!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--        </table>-->
+
+
+    </context>
+</generatorConfiguration>
